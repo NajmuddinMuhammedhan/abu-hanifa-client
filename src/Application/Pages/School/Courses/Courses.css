@@ -5,7 +5,7 @@
 	user-select: none;
 }
 .courses .main {
-	background: #231942;
+	background: #072ac8;
 	color: #fff;
 	min-height: calc(50vh - 16vmin);
 	margin: 0 4vmin;
@@ -37,7 +37,7 @@
 }
 .courses .main button {
 	font-size: 2vmin;
-	background: #FED14C;
+	background: #fff;
 	text-transform: uppercase;
 	color: #000;
 	border: none;
@@ -47,6 +47,10 @@
 	border-radius: 2vmin;
 	padding: 0.9vmin 5vmin;
 	margin-bottom: 0;
+	transition: background 300ms ease, color 300ms ease;
+}
+.courses .main button:hover {
+	background: #dbb42c;
 }
 
 .courses > .slider {
@@ -73,12 +77,20 @@
 	border-radius: 2vmin;
 	border: none;
 }
-.courses > .slider > .wrapper > ul > li:nth-child(odd) > button {
-	background: #231942;
+.courses > .slider > .wrapper > ul > li:nth-child(4n+1) > button {
+	background: #023e7d;
 	color: #fff;
 }
-.courses > .slider > .wrapper > ul > li:nth-child(even) > button {
-	background: #0466c8;
+.courses > .slider > .wrapper > ul > li:nth-child(4n+2) > button {
+	background: #0297fe;
+	color: #fff;
+}
+.courses > .slider > .wrapper > ul > li:nth-child(4n+3) > button {
+	background: #033f63;
+	color: #fff;
+}
+.courses > .slider > .wrapper > ul > li:nth-child(4n+4) > button {
+	background: #006ba6;
 	color: #fff;
 }
 .courses > .slider > .wrapper > ul > li > button svg {
@@ -99,7 +111,7 @@
 	color: currentColor;
 	will-change: transform;
 	transition: transform 600ms cubic-bezier(0.76, 0, 0.24, 1);
-	-webkit-box-reflect: below -2vmin linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
+	-webkit-box-reflect: below -0.8vmin linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
 }
 .courses > .slider > .wrapper > ul > li > button p {
 	font-size: 2.5vmin;
