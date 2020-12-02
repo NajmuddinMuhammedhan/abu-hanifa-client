@@ -1,6 +1,6 @@
 // import { Route, Redirect } from 'react-router-dom'
-import { Route, Redirect } from 'react-router-dom'
-import useAccount from '../../Hooks/useAccount.js'
+import { Route } from 'react-router-dom'
+// import useAccount from '../../Hooks/useAccount.js'
 
 function Private ({ children, ...props }) {
 
