@@ -1,9 +1,10 @@
+// import { Route, Redirect } from 'react-router-dom'
 import { Route, Redirect } from 'react-router-dom'
 import useAccount from '../../Hooks/useAccount.js'
 
 function Private ({ children, ...props }) {
 
-	const [isLoggedIn] = useAccount()
+	// const [isLoggedIn] = useAccount()
 
 	return (
 		<Route
