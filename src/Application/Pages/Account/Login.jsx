@@ -49,6 +49,8 @@ function Login () {
 				onSubmit={event => {
 					event.preventDefault()
 					createToken({ variables: { username, password }, })
+					setUsername('')
+					setPassword('')
 					event.target.reset()
 				}}
 			>
