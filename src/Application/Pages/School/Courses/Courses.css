@@ -1,4 +1,53 @@
 /*COURSES*/
+.courses {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.courses .main {
+	background: #231942;
+	color: #fff;
+	min-height: calc(50vh - 16vmin);
+	margin: 0 4vmin;
+	padding: 8vmin 2vmin;
+	border-radius: 2vmin;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.courses .main > svg {
+	width: 9vmin;
+	height: 9vmin;
+	fill: currentColor;
+}
+.courses .main h1 {
+	font-size: 5vmin;
+	text-transform: uppercase;
+	-webkit-box-reflect: below -2vmin linear-gradient(to bottom, transparent, rgba(0,0,0,0.03));
+}
+.courses .main h1,
+.courses .main button {
+	margin: 2vmin 0;
+}
+.courses .main p {
+	text-align: center;
+	font-size: 2.5vmin;
+	margin-bottom: 2vmin;
+}
+.courses .main button {
+	font-size: 2vmin;
+	background: #FED14C;
+	text-transform: uppercase;
+	color: #000;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2vmin;
+	padding: 0.9vmin 5vmin;
+	margin-bottom: 0;
+}
 
 .courses > .slider {
 	position: relative;
@@ -25,7 +74,7 @@
 	border: none;
 }
 .courses > .slider > .wrapper > ul > li:nth-child(odd) > button {
-	background: #00415a;
+	background: #231942;
 	color: #fff;
 }
 .courses > .slider > .wrapper > ul > li:nth-child(even) > button {
@@ -102,6 +151,31 @@
 	fill: #fff;
 }
 @media screen and (max-width: 561px) {
+	.courses .main {
+		min-height: calc(50vh - 10vmin);
+	}
+	.courses .main > svg {
+		width: 12vmin;
+		height: 12vmin;
+	}
+	.courses .main h1 {
+		font-size: 7vmin;
+		text-transform: uppercase;
+		-webkit-box-reflect: below -2vmin linear-gradient(to bottom, transparent, rgba(0,0,0,0.03));
+	}
+	.courses .main h1,
+	.courses .main button {
+		margin: 4vmin 0;
+	}
+	.courses .main p {
+		font-size: 3.5vmin;
+		margin-bottom: 4vmin;
+	}
+	.courses .main button {
+		font-size: 4vmin;
+		border-radius: 5vmin;
+		padding: 2vmin 10vmin;
+	}
 	.courses > .slider > .wrapper > ul > li > button {
 		display: flex;
 		flex-direction: column;
