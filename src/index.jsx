@@ -46,6 +46,7 @@ const splitLink = split(
 
 const client = new ApolloClient({
 	link: concat(authMiddleware, splitLink),
+	fetchOptions: { mode: 'no-cors', },
 	cache: new InMemoryCache(),
 })
 
