@@ -69,6 +69,12 @@
 #login .box:last-child {
 	color: #000;
 }
+#login .box:last-child .message {
+	text-align: center;
+	font-size: 2.5vmin;
+	margin-bottom: 2vmin;
+	color: #000;
+}
 #login .input {
 	display: flex;
 	flex-direction: row;
@@ -90,7 +96,7 @@
 	margin: 2vmin 0 2vmin 2vmin;
 }
 #login .input input {
-	font-size: 3vmin;
+	font-size: 2vmin;
 	padding: 1vmin 2vmin;
 	width: 100%;
 }
@@ -98,8 +104,8 @@
 	width: 80%;
 }
 #login form button {
-	font-size: 3vmin;
-	background: #2f194b;
+	font-size: 2vmin;
+	background: #072ac8;
 	justify-content: space-between;
 	align-items: center;
 	color: #fff;
@@ -210,7 +216,7 @@
 		align-items: flex-start;
 	}
 	#login .main .wrapper {
-		background: #000;
+		background: #051923;
 		filter: inherit;
 		border-radius: 0;
 		min-width: 100vw;
@@ -243,14 +249,19 @@
 	#login .box:last-child {
 		color: #000;
 	}
+	#login .box:last-child .message {
+		font-size: 4vmin;
+		margin-bottom: 4vmin;
+		color: #fff;
+	}
 	#login .input {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		background: #f0f0f0;
-		border-radius: 1vmin;
+		border-radius: 2vmin;
 		width: 100%;
-		margin-bottom: 3vmin;
+		margin-bottom: 4vmin;
 		padding: 2vmin;
 	}
 	#login .input:last-child {
@@ -274,8 +285,9 @@
 	}
 	#login form button {
 		font-size: 4vmin;
-		background: #ffc14d;
-		color: #000;
+		background: #072ac8;
+		border-radius: 2vmin;
+		color: #fff;
 		padding: 5vmin;
 	}
 	#login form button svg {
@@ -307,6 +319,10 @@
 	}
 	#login .footer ul + ul > li > button {
 		flex-direction: row-reverse;
+	}
+	#login .footer ul > li > div > ul > li > button:hover {
+		background: #072ac8;
+		color: #fff;
 	}
 	#login .footer ul + ul > li > button svg {
 		margin-right: 2vmin;

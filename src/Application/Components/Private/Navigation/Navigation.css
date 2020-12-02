@@ -1,4 +1,8 @@
 nav#school {
-	margin-bottom: 4vmin;
 	padding: 4vmin;
+}
+nav#school button {
+	background: transparent;
+	border: none;
+	padding: 2vmin 0;
 }

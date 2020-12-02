@@ -28,6 +28,9 @@ function Courses () {
 						<Slider
 							offset="4vmin"
 							space="4vmin"
+							wide={5}
+							medium={3}
+							small={2}
 						>
 							<ul>
 							{

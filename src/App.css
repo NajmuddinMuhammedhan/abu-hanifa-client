@@ -18,6 +18,7 @@ button {
 	font-family: 'Barlow Light', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	outline: none;
 	cursor: pointer;
+	-webkit-tap-highlight-color: transparent
 }
 button:disabled {
 	cursor: default;

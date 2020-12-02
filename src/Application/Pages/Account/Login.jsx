@@ -61,8 +61,8 @@ function Login () {
 									event.target.reset()
 								}}
 							>
-								{loading && <h1>loading...</h1>}
-								{error && <h1>{error.message}</h1>}
+								{loading && <p className="message">loading...</p>}
+								{error && <p className="message">{error.message}</p>}
 								<div className="input">
 									<label htmlFor="email">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.323 513.323">
