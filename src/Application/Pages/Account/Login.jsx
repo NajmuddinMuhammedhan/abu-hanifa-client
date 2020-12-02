@@ -36,7 +36,7 @@ function Login () {
 	])
 
 	useEffect(() => {
-		// if (account !== null) history.goBack()
+		if (account !== null) history.goBack()
 	}, [
 		account,
 		history,
