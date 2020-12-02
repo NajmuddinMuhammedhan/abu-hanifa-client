@@ -15,7 +15,7 @@ function Login () {
 	const [disabled, setDisabled] = useState(true)
 
 	const [createToken, { loading, error }] = useMutation(CREATE_TOKEN, {
-		onError: (error) => console.error(error),
+		errorPolicy: 'all',
 		// update: (cache, { data: { createToken } }) => {
 		update: (cache, data) => {
 			console.log(data)

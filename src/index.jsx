@@ -4,10 +4,9 @@ import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, ApolloLink, concat } from '@apollo/client'
-// import { getMainDefinition } from '@apollo/client/utilities'
-// import { WebSocketLink } from '@apollo/client/link/ws'
-// import { SubscriptionClient } from 'subscriptions-transport-ws'
+import { ApolloClient, InMemoryCache, ApolloProvider, split, HttpLink, ApolloLink, concat } from '@apollo/client'
+import { getMainDefinition } from '@apollo/client/utilities'
+import { WebSocketLink } from '@apollo/client/link/ws'
 
 /*
 	import providers (Context API)
@@ -16,7 +15,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, ApolloLink, conc
 import Account from './Application/Context/Account/Provider.jsx'
 
 const httpLink = new HttpLink({
-	uri: 'https://abu-hanifa.herokuapp.com/graphql',
+	uri: 'https://abu-hanifa-graphql.herokuapp.com/graphql',
 })
 
 const authMiddleware = new ApolloLink((operation, forward) => {
@@ -28,28 +27,25 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 	return forward(operation);
 })
 
-// const wsLink = new WebSocketLink({
-// 	uri: `wss://abu-hanifa.herokuapp.com/graphql`,
-// 	options: { reconnect: true },
-// })
+const wsLink = new WebSocketLink({
+	uri: `wss://abu-hanifa-graphql.herokuapp.com/graphql`,
+	options: { reconnect: true },
+})
 
-// const wsLink = new WebSocketLink(new SubscriptionClient(`wss://abu-hanifa.herokuapp.com/subscriptions`, { reconnect: true, }))
-
-// const splitLink = split(
-// 	({ query }) => {
-// 		const definition = getMainDefinition(query);
-// 		return (
-// 			definition.kind === 'OperationDefinition' &&
-// 			definition.operation === 'subscription'
-// 		)
-// 	},
-// 	wsLink,
-// 	httpLink,
-// )
+const splitLink = split(
+	({ query }) => {
+		const definition = getMainDefinition(query);
+		return (
+			definition.kind === 'OperationDefinition' &&
+			definition.operation === 'subscription'
+		)
+	},
+	wsLink,
+	httpLink,
+)
 
 const client = new ApolloClient({
-	link: concat(authMiddleware, httpLink),
-	fetchOptions: { mode: 'no-cors', },
+	link: concat(authMiddleware, splitLink),
 	cache: new InMemoryCache(),
 })
 
