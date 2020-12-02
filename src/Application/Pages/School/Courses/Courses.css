@@ -78,8 +78,8 @@
 	color: #fff;
 }
 .courses > .slider > .wrapper > ul > li:nth-child(even) > button {
-	background: #fff;
-	color: #000;
+	background: #0466c8;
+	color: #fff;
 }
 .courses > .slider > .wrapper > ul > li > button svg {
 	width: 10vmin;
