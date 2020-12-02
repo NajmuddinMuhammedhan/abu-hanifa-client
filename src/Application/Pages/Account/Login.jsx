@@ -7,7 +7,7 @@ import './Account.css'
 
 function Login () {
 
-	const [account] = useAccount()
+	const [account, dispatch] = useAccount()
 	const history = useHistory()
 
 	const [username, setUsername] = useState('')
@@ -16,17 +16,15 @@ function Login () {
 
 	const [createToken, { loading, error }] = useMutation(CREATE_TOKEN, {
 		errorPolicy: 'all',
-		// update: (cache, { data: { createToken } }) => {
-		update: (cache, data) => {
-			console.log(data)
-			// cache.modify({
-			// 	fields: {
-			// 		createToken: (createToken = {}) => {
-			// 			return createToken
-			// 		}
-			// 	}
-			// })
-			// dispatch({ type: 'login', user: createToken.user, accessToken: createToken.token })
+		update: (cache, { data: { createToken } }) => {
+			cache.modify({
+				fields: {
+					createToken: (createToken = {}) => {
+						return createToken
+					}
+				}
+			})
+			dispatch({ type: 'login', user: createToken.user, accessToken: createToken.token })
 		}
 	})
 
