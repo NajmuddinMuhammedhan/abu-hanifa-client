@@ -5,7 +5,6 @@ import { CREATE_TOKEN } from './Graphql.js'
 import { useMutation } from '@apollo/client'
 import './Account.css'
 
-const user = { username: 'root', role: 1, }
 function Login () {
 
 	const [account, dispatch] = useAccount()
