@@ -1,0 +1,321 @@
+#login {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(to right, #fff 0% 50%, #033e7d 50% 100%);
+}
+#login button {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	display: flex;
+	border: none;
+	outline: none;
+	background: transparent;
+	width: 100%;
+	cursor: pointer;
+}
+#login input {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	display: flex;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+#login label {
+	cursor: pointer;
+}
+#login button:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+#login .main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1 0 auto;
+}
+#login .main .wrapper {
+	background: linear-gradient(to right, #033e7d 0% 50%, #fff 50% 100%);
+	filter: drop-shadow(0 0 0.5vmin rgba(0,0,0,0.5));
+	border-radius: 2vmin;
+	min-width: 120vh;
+	min-height: 60vh;
+	display: flex;
+}
+#login .box {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#login .box:first-child {
+	color: #000;
+}
+#login .box:first-child button {
+	color: #fff;
+	align-items: center;
+	justify-content: center;
+}
+#login .box:first-child button svg {
+	width: 25vmin;
+	height: 25vmin;
+	fill: currentColor;
+}
+#login .box:last-child {
+	color: #000;
+}
+#login .input {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: #f0f0f0;
+	border-radius: 1vmin;
+	width: 100%;
+	margin-bottom: 3vmin;
+}
+#login .input:last-child {
+	margin: 40vmin;
+	background: red;
+	padding: 2vmin;
+}
+#login .input svg {
+	width: 3.5vmin;
+	height: 3.5vmin;
+	fill: currentColor;
+	margin: 2vmin 0 2vmin 2vmin;
+}
+#login .input input {
+	font-size: 3vmin;
+	padding: 1vmin 2vmin;
+	width: 100%;
+}
+#login form {
+	width: 80%;
+}
+#login form button {
+	font-size: 3vmin;
+	background: #2f194b;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	padding: 2vmin 4vmin;
+	border-radius: 1vmin;
+	width: 100%;
+}
+#login form button svg {
+	width: 4vmin;
+	height: 4vmin;
+	fill: currentColor;
+}
+#login .footer {
+	padding: 4vmin;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#login .footer ul {
+	display: flex;
+	flex-direction: row;
+	white-space: nowrap;
+}
+#login .footer ul > li {
+	position: relative;
+}
+#login .footer > ul > li > button {
+	font-size: 3vmin;
+	color: #fff;
+	mix-blend-mode: difference;
+	align-items: center;
+}
+#login .footer ul > li > button svg {
+	width: 5vmin;
+	height: 5vmin;
+	fill: currentColor;
+}
+#login .footer button svg + span {
+	margin-left: 2vmin;
+}
+#login .footer button span + svg {
+	margin-left: 2vmin;
+}
+#login .footer button {
+	transition: background-color 300ms ease, color 300ms ease;
+}
+#login .footer ul > li > div {
+	pointer-events: none;
+	opacity: 0;
+	z-index: 2;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	padding: 2.5vmin 1vmin;
+}
+#login .footer ul + ul > li > div {
+	left: inherit;
+	right: 0;
+}
+#login .footer ul > li > div > ul {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 1vmin;
+	filter: drop-shadow(0 0 0.5vmin rgba(0,0,0,0.2));
+	transition: opacity 250ms ease;
+}
+#login .footer ul > li:hover > div {
+	pointer-events: inherit;
+	opacity: 1;
+}
+#login .footer ul > li > div > ul > li {
+	width: 100%;
+}
+#login .footer ul > li > div > ul > li > button {
+	font-size: 3vmin;
+	padding: 2vmin 3vmin;
+	z-index: 1;
+}
+#login .footer ul > li > div > ul > li:first-child,
+#login .footer ul > li > div > ul > li:first-child > button {
+	border-top-left-radius: 1vmin;
+	border-top-right-radius: 1vmin;
+}
+#login .footer ul > li > div > ul > li:last-child,
+#login .footer ul > li > div > ul > li:last-child > button {
+	border-bottom-left-radius: 1vmin;
+	border-bottom-right-radius: 1vmin;
+}
+#login .footer ul > li > div > ul > li > button:hover {
+	background: #000;
+	color: #fff;
+}
+#login .footer ul + ul > li > div > ul {
+	background: #fff;
+
+}
+#login .footer ul + ul > li > div > ul > li > button:hover {
+	background: #ffc14d;
+	color: #000;
+}
+@media screen and (max-width: 961px) {
+	#login {
+		background: transparent;
+	}
+	#login .main {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	#login .main .wrapper {
+		background: #000;
+		filter: inherit;
+		border-radius: 0;
+		min-width: 100vw;
+		min-height: inherit;
+		flex: 1 0 auto;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	#login .box {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	#login .box:first-child {
+		color: #000;
+		padding: 6vmin;
+	}
+	#login .box:first-child button {
+		color: #fff;
+	}
+	#login .box:first-child button svg {
+		width: 30vmin;
+		height: 30vmin;
+		fill: #fff;
+		margin-bottom: 4vmin;
+	}
+	#login .box:last-child {
+		color: #000;
+	}
+	#login .input {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		background: #f0f0f0;
+		border-radius: 1vmin;
+		width: 100%;
+		margin-bottom: 3vmin;
+		padding: 2vmin;
+	}
+	#login .input:last-child {
+		margin: 40vmin;
+		background: red;
+		padding: 2vmin;
+	}
+	#login .input svg {
+		width: 5vmin;
+		height: 5vmin;
+		fill: currentColor;
+		margin: 3vmin 0 3vmin 3vmin;
+	}
+	#login .input input {
+		font-size: 4vmin;
+		padding: 1vmin 2vmin;
+		width: 100%;
+	}
+	#login form {
+		width: 80%;
+	}
+	#login form button {
+		font-size: 4vmin;
+		background: #ffc14d;
+		color: #000;
+		padding: 5vmin;
+	}
+	#login form button svg {
+		width: 6vmin;
+		height: 6vmin;
+	}
+	#login .footer {
+		padding: 6vmin 4vmin;
+		background: #000;
+		flex-direction: row;
+		justify-content: center;
+	}
+	#login .footer ul {
+		align-items: center;
+		justify-content: center;
+	}
+	#login .footer ul + ul {
+		margin-left: 3vmin;
+	}
+	#login .footer ul > li > button svg {
+		width: 6vmin;
+		height: 6vmin;
+	}
+	#login .footer ul > li > div {
+		left: 0;
+	}
+	#login .footer ul > li > button {
+		font-size: 4vmin;
+	}
+	#login .footer ul + ul > li > button {
+		flex-direction: row-reverse;
+	}
+	#login .footer ul + ul > li > button svg {
+		margin-right: 2vmin;
+	}
+	#login .footer ul + ul > li > button span {
+		margin-right: 0;
+	}
+	#login .footer ul > li > div > ul > li > button {
+		font-size: 4vmin;
+		padding: 3vmin 5vmin;
+	}
+}
