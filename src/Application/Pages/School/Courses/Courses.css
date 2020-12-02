@@ -144,7 +144,7 @@
 	top: calc(50% - 2.5vmin);
 	background: transparent;
 	color: #fff;
-	mix-blend-mode: difference;
+	/*mix-blend-mode: difference;*/
 	border: none;
 	z-index: 1;
 }
