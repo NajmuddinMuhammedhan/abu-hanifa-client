@@ -4,9 +4,10 @@ import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { ApolloClient, InMemoryCache, ApolloProvider, split, HttpLink, ApolloLink, concat } from '@apollo/client'
-import { getMainDefinition } from '@apollo/client/utilities'
-import { WebSocketLink } from '@apollo/client/link/ws'
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, ApolloLink, concat } from '@apollo/client'
+// import { getMainDefinition } from '@apollo/client/utilities'
+// import { WebSocketLink } from '@apollo/client/link/ws'
+// import { SubscriptionClient } from 'subscriptions-transport-ws'
 
 /*
 	import providers (Context API)
@@ -27,25 +28,27 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 	return forward(operation);
 })
 
-const wsLink = new WebSocketLink({
-	uri: `wss://abu-hanifa.herokuapp.com/graphql`,
-	options: { reconnect: true },
-})
+// const wsLink = new WebSocketLink({
+// 	uri: `wss://abu-hanifa.herokuapp.com/graphql`,
+// 	options: { reconnect: true },
+// })
 
-const splitLink = split(
-	({ query }) => {
-		const definition = getMainDefinition(query);
-		return (
-			definition.kind === 'OperationDefinition' &&
-			definition.operation === 'subscription'
-		)
-	},
-	wsLink,
-	httpLink,
-)
+// const wsLink = new WebSocketLink(new SubscriptionClient(`wss://abu-hanifa.herokuapp.com/subscriptions`, { reconnect: true, }))
+
+// const splitLink = split(
+// 	({ query }) => {
+// 		const definition = getMainDefinition(query);
+// 		return (
+// 			definition.kind === 'OperationDefinition' &&
+// 			definition.operation === 'subscription'
+// 		)
+// 	},
+// 	wsLink,
+// 	httpLink,
+// )
 
 const client = new ApolloClient({
-	link: concat(authMiddleware, splitLink),
+	link: concat(authMiddleware, httpLink),
 	fetchOptions: { mode: 'no-cors', },
 	cache: new InMemoryCache(),
 })
