@@ -1,4 +1,5 @@
 import useAccount from '../../../Hooks/useAccount.js'
+import './Navigation.css'
 
 function Navigation () {
 
@@ -6,22 +7,23 @@ function Navigation () {
 
 	return (
 		<>
-			<code>{JSON.stringify(user)}</code>
 			<nav id="school">
 				<ul>
 					<li>
 						<button>
-							<span>Hisob</span>
+							<span>{user.username}</span>
 						</button>
-						<ul>
-							<li>
-								<button
-									onClick={() => dispatch({ type: 'logout', })}
-								>
-									<span>Chiqish</span>
-								</button>
-							</li>
-						</ul>
+						<div>
+							<ul>
+								<li>
+									<button
+										onClick={() => dispatch({ type: 'logout', })}
+									>
+										<span>Chiqish</span>
+									</button>
+								</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</nav>
