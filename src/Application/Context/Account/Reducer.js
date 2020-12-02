@@ -2,7 +2,7 @@ function Reducer (state, { type, user, accessToken, }) {
 	if (type === 'login') {
 		window.localStorage.setItem('account', JSON.stringify(user))
 		window.localStorage.setItem('accessToken', JSON.stringify(accessToken))
-		return { user, accessToken }
+		return user
 	}
 	else if(type === 'logout') {
 		window.localStorage.removeItem('account')

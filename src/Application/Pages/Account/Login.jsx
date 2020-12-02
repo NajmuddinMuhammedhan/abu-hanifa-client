@@ -7,7 +7,7 @@ import './Account.css'
 
 function Login () {
 
-	const [account, dispatch] = useAccount()
+	const [dispatch] = useAccount(true)
 	const history = useHistory()
 
 	const [username, setUsername] = useState('')
@@ -25,6 +25,7 @@ function Login () {
 				}
 			})
 			dispatch({ type: 'login', user: createToken.user, accessToken: createToken.token })
+			history.push('/school/courses')
 		}
 	})
 
@@ -33,13 +34,6 @@ function Login () {
 	}, [
 		username,
 		password,
-	])
-
-	useEffect(() => {
-		if (account !== null) history.goBack()
-	}, [
-		account,
-		history,
 	])
 
 	return (
