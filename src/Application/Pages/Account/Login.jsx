@@ -17,6 +17,16 @@ function Login () {
 
 	const [createToken, { loading, error }] = useMutation(CREATE_TOKEN, {
 		onError: (error) => console.error(error),
+		update(cache, { data: { createToken } }) {
+			cache.modify({
+				fields: {
+					createToken: (createToken = {}) => {
+						return createToken
+					}
+				}
+			})
+			dispatch({ type: 'login', user: createToken.user, accessToken: createToken.token })
+		}
 	})
 
 	useEffect(() => {
@@ -73,11 +83,6 @@ function Login () {
 					</button>
 				</div>
 			</form>
-			<button
-				onClick={() => dispatch({ type: 'login', data: user, })}
-			>
-				<span>Kirish</span>
-			</button>
 		</>
 	)
 }
