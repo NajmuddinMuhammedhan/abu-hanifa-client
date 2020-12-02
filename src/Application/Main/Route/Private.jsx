@@ -10,7 +10,8 @@ function Private ({ children, ...props }) {
 			{ ...props }
 			render={
 				({ location, }) => {
-					return isLoggedIn !== null ? children : <Redirect to={{ pathname: '/login', state: { from: location, }, }} />
+					return children
+					// return isLoggedIn !== null ? children : <Redirect to={{ pathname: '/login', state: { from: location, }, }} />
 				}
 			}
 		/>
